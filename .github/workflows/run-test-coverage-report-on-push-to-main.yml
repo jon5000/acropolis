@@ -3,11 +3,11 @@ name: Run test coverage report on push to main
 on:
   push:
     branches:
-      - main
+      - foo
 
   pull_request:
     branches:
-      - main
+      - foo
 
 env:
   CARGO_TERM_COLOR: always

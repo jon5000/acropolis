@@ -28,7 +28,7 @@ jobs:
         run: df -h
 
       - name: Run Format
-        run: dpkg -l
+        run: dpkg-query -W -f='${Installed-Size;8} ${Package}\n' | sort -n
         
       - name: Run Format
-        run: ls -l /opt
+        run: find  /opt -maxdepth 1 -exec du -shx {} \;

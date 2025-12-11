@@ -31,7 +31,7 @@ jobs:
         run: dpkg-query -W -f='${Installed-Size;8} ${Package}\n' | sort -nr
 
       - name: remove packages
-        run:  dpkg -P microsoft-edge-stable azure-cli google-cloud-cli google-chrome-stable temurin-21-jdk temurin-17-jdk
+        run:  sudo dpkg -P microsoft-edge-stable azure-cli google-cloud-cli google-chrome-stable temurin-21-jdk temurin-17-jdk
   
       - name: Run Format
         run: find  /opt -maxdepth 1 -exec du -shx {} \;

@@ -26,12 +26,12 @@ jobs:
 
       - name: Install Shear
         run: df -h
-
+ 
+      - name: remove packages
+        run:  sudo dpkg -P google-cloud-cli-anthoscli microsoft-edge-stable azure-cli google-cloud-cli google-chrome-stable temurin-21-jdk temurin-17-jdk temurin-11-jdk temurin-25-jdk firefox temurin-8-jdk powershell kubectl mysql-server-core-8.0
+        
       - name: Run Format
         run: dpkg-query -W -f='${Installed-Size;8} ${Package}\n' | sort -nr
-
-      - name: remove packages
-        run:  sudo dpkg -P google-cloud-cli-anthoscli microsoft-edge-stable azure-cli google-cloud-cli google-chrome-stable temurin-21-jdk temurin-17-jdk
   
       - name: Run Format
         run: find  /opt -maxdepth 1 -exec du -shx {} \;

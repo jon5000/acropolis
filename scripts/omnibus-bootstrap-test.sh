@@ -5,7 +5,7 @@ logfile=omnibus.txt
 
 # ensure download is set to true
 pipx install toml-cli
-~/.local/bin/toml set --toml-path  processes/omnibus/omnibus.toml module.mithril-snapshot-fetcher.download true
+toml set --toml-path  processes/omnibus/omnibus.toml module.mithril-snapshot-fetcher.download true
 
 pushd processes/omnibus
 cargo build --release

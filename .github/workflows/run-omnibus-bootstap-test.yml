@@ -23,6 +23,9 @@ jobs:
       - name: find
         run: cat /mnt/DATALOSS_WARNING_README.txt
 
+      - name: ls
+        run: ls -l /
+
       - name: Checkout code
         uses: actions/checkout@v4
 

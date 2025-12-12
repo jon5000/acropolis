@@ -12,7 +12,7 @@ cargo build --release
 cargo run --release > $logfile 2>&1  &
 sleep 2
 cargopid=$(pidof -s acropolis_process_omnibus)
-
+sudo apt install -y since
 # kill the process if it takes too long, e.g. 60x180=3hrs
 sleeptime=10
 maxcount=3

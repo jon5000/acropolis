@@ -21,7 +21,7 @@ jobs:
         run: df -h
 
       - name: find
-        run: find /mnt -maxdepth 2 -exec du -shx {} \;
+        run: cat /mnt/DATALOSS_WARNING_README.txt
 
       - name: Checkout code
         uses: actions/checkout@v4

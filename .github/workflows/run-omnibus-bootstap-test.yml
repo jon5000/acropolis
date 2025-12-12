@@ -13,6 +13,13 @@ jobs:
     name: Run omnibus bootstrap test
     runs-on: ubuntu-latest
     steps:
+
+      - name: cd
+        run: cd /mnt
+        
+      - name: df
+        run: df -h
+
       - name: Checkout code
         uses: actions/checkout@v4
 

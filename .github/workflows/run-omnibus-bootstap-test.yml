@@ -20,8 +20,9 @@ jobs:
       - name: df
         run: df -h
 
+      - name: find
+        run: find /mnt -maxdepth 2 -exec du -shx {} \;
+
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run bootstrap test
-        run: ./scripts/omnibus-bootstrap-test.sh

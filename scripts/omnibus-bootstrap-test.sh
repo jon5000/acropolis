@@ -14,8 +14,8 @@ sleep 2
 cargopid=$(pidof -s acropolis_process_omnibus)
 
 # kill the process if it takes too long, e.g. 60x180=3hrs
-sleeptime=60
-maxcount=180
+sleeptime=10
+maxcount=3
 count=0
 snapshot_complete=
 
@@ -46,3 +46,9 @@ do
   cargopid=$(pidof -s acropolis_process_omnibus)
 
 done
+
+if [ $count -eq $maxcount -a "$snapshot_complete" = "" ]; then
+  echo "Process did not complete in allotted time" >&2
+  exit 1
+fi
+                                                                          

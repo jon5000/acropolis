@@ -29,11 +29,12 @@ jobs:
  
       - name: Remove packages to free up disk space
         run:  |
-          sudo dpkg -P google-cloud-cli google-cloud-cli-anthoscli google-chrome-stable \
-            microsoft-edge-stable azure-cli powershell kubectl \
-            temurin-21-jdk temurin-17-jdk temurin-11-jdk temurin-25-jdk temurin-8-jdk ant \
-            firefox mysql-server-core-8.0  mysql-server-8.0 mysql-server
-        
+          sudo dpkg -P ant ant-optional azure-cli firefox google-chrome-stable \
+            google-cloud-cli google-cloud-cli-anthoscli kubectl \
+            microsoft-edge-stable mysql-server mysql-server-8.0  \
+            mysql-server-core-8.0 powershell temurin-11-jdk temurin-17-jdk \
+            temurin-21-jdk temurin-25-jdk temurin-8-jdk
+            
       - name: Run Format
         run: dpkg-query -W -f='${Installed-Size;8} ${Package}\n' | sort -nr | head -n 20
   
